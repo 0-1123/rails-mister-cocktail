@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon one">
+      <%= link_to cocktails_path, class: "navbar-brand" do %>
+        <i class="large material-icons" style="color: white;">local_bar</i>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Cocktails", cocktails_path, class: "nav-link", style: "color: white;" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add cocktail", new_cocktail_path, class: "nav-link", style: "color: white;" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <%= image_tag "img#{@cocktail.id}.jpeg", alt: "alttext", style: "position: absolute; z-index: -1;"%>
+<div class="container-fluid mt-2">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="card-trans mb-3 p-3 ml-2" style="width: 500px; position: fixed;" >
+<h1 style="color: white;"><%= @cocktail.name %></h1>
+<ul>
+   <% @cocktail.doses.each do |ing| %>
+    <li>
+      <p style="color: white;"> <%= ing.description  %> <%= ing.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail), class: 'btn-sm btn-danger',
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+      </p>
+    </li>
+   <% end %>
+</ul>
+<%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-warning ml-3 mt-3' %>
+</div>
+</div>

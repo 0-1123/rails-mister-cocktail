@@ -1,0 +1,35 @@
+<%= image_tag "back-index.jpeg", alt: "background", class: "index-back" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon one">
+      <%= link_to cocktails_path, class: "navbar-brand" do %>
+        <i class="large material-icons" style="color: white;">local_bar</i>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Cocktails", cocktails_path, class: "nav-link", style: "color: white;" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add cocktail", new_cocktail_path, class: "nav-link", style: "color: white;" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+<div class="container mt-2">
+<h1 style="color: white;">Your Cocktails</h1>
+<div class="row">
+<% i = 1 %>
+<% @cocktails.each do |cocktail| %>
+    <div class="col-4 mt-3">
+      <div class="card-trans text-white mb-3" style="width: 20rem; border-radius: 4px;">
+        <%= image_tag "img#{i}.jpeg", alt: "Cocktail", class: "card-img-top img-fit mb-2" %>
+        <h2 class="ml-3"><%= cocktail.name %></h2>
+        <p><%= link_to "read more", cocktail_path(cocktail), class: "ml-3 card-link" %></p>
+      </div>
+    </div>
+  <% i += 1 %>
+<% end %>
+</div>
+</div>
