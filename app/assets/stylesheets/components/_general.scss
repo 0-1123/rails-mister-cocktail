@@ -12,8 +12,18 @@ h1 {
   z-index: -1;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  filter: brightness(30%);
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.index-new {
+  position: absolute;
+  margin: 0;
+  width: 100vw;
+  z-index: -1;
+  background-repeat: no-repeat;
+  filter: brightness(60%);
 }
