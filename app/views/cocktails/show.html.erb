@@ -1,4 +1,4 @@
-<%= image_tag "img#{@cocktail.id}.jpeg", alt: "alttext", style: "position: absolute; z-index: -1; width: 100vw;"%>
+<%= image_tag "back-new.jpeg", alt: "alttext", style: "position: absolute; z-index: -1; width: 100vw; filter: brightness(60%);"%>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon one fixed-top">
       <%= link_to cocktails_path, class: "navbar-brand" do %>
         <i class="large material-icons" style="color: white;">local_bar</i>
@@ -31,7 +31,7 @@
 <ul>
    <% @cocktail.doses.each do |ing| %>
     <li>
-      <p style="color: white;"> <%= ing.description  %> <strong><%= ing.ingredient.name %></strong> <%= link_to "Delete", cocktail_dose_path(@cocktail), class: 'btn-sm btn-dark ml-2',
+      <p style="color: white;"> <%= ing.description  %> <strong><%= ing.ingredient.name %></strong> <%= link_to "Delete", dose_path(ing), class: 'btn-sm btn-dark ml-2',
       method: :delete,
       data: { confirm: "Are you sure?" } %>
 

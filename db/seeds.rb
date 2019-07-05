@@ -8,7 +8,8 @@
 
 require 'json'
 require 'open-uri'
-
+Cocktail.destroy_all
+Dose.destroy_all
 Ingredient.destroy_all
 
 puts "Parsing..."
