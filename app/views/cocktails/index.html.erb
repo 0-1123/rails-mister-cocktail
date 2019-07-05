@@ -1,4 +1,3 @@
-<%= image_tag "back-index.jpeg", alt: "background", class: "index-back", style: "filter: brightness(20%);" %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon one fixed-top">
       <%= link_to cocktails_path, class: "navbar-brand" do %>
         <i class="large material-icons" style="color: white;">local_bar</i>
@@ -27,7 +26,6 @@
 <% @cocktails.each do |cocktail| %>
     <div class="col-xl-4 col-lg-6 col-sm-12 mt-3">
       <div class="card-trans text-white mb-3" style="width: 20rem; border-radius: 4px;">
-        <%= image_tag "img#{i}.jpeg", alt: "Cocktail", class: "card-img-top img-fit mb-2" %>
         <h2 class="ml-3"><%= cocktail.name %></h2>
         <p><%= link_to "read more", cocktail_path(cocktail), class: "ml-3 card-link" %></p>
       </div>
