@@ -27,3 +27,11 @@ a:hover {
   background-repeat: no-repeat;
   filter: brightness(60%);
 }
+
+.show-cocktail {
+  position: absolute;
+  margin: 0;
+  width: 100vw;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
